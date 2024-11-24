@@ -1,0 +1,21 @@
+<h1>DBZ Personajes</h1>
+<hr>
+
+<div class="row">
+
+        <div class="col">
+            <!-- <dbz-list></dbz-list> -->
+        
+          <!-- último paso mandar llamar al evento y pasar al método del padre
+           el valor que emite ese evento $event -->
+            <dbz-list
+             (onNewDeleteEmitter)="onNewDeleteCharacterMain($event)"
+            [characterList]="characters"></dbz-list>
+            
+        </div>
+        <div class="col">
+            <!-- Emitimos nuestro evento del componenete hijo al padre -->
+            <dbz-add-character (onNewCharacter)="onNewCharacterMain($event)"></dbz-add-character>
+        </div>
+
+</div>
